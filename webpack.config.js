@@ -14,6 +14,13 @@ module.exports = {
       template: 'demo/index.html'
     })
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'demo'),
+    },
+    compress: true,
+    port: 9000,
+  },
   module: {
     rules: [
       {
