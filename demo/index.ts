@@ -1,12 +1,14 @@
-import { createAction, createSubscriber } from '../src/dispatcher';
-import { CounterStore, ACTION_INCREASE, ACTION_DECREASE } from './counterStore';
-import { App } from './app';
+import { createStore } from '../src/createStore';
+import { combineReducers } from '../src/combineReducers';
+import { connect } from '../src/connect';
 
-const counterStoreSubscriber = createSubscriber(new CounterStore());
+import { counterReducer, countSelector } from './counterReducer';
 
-const actions = {
-  increase: createAction(ACTION_INCREASE),
-  decrease: createAction(ACTION_DECREASE)
-};
+import { App, mapStateToProps, mapDispatchToProps } from './app';
 
-App(counterStoreSubscriber, actions.increase, actions.decrease);
+const store = createStore(combineReducers({
+  counter: counterReducer,
+}));
+
+const { onCountChange } = connect(App, store, mapStateToProps, mapDispatchToProps);
+store.subscribe((state) => onCountChange(countSelector(state)));
