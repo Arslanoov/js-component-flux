@@ -8,7 +8,7 @@ export const combineReducers = (reducers) => {
       reducerFunctions[key] = reducers[key];
     }
   });
-  
+
   const reducerFunctionsKeys = Object.keys(reducerFunctions);
 
   return (state = {}, action) => {
@@ -19,4 +19,4 @@ export const combineReducers = (reducers) => {
 
     return nextState;
   };
-}
+};

@@ -7,7 +7,7 @@ export const createStore = (rootReducer) => {
   const dispatch = (action) => {
     state = rootReducer(state, action);
     listeners.forEach((listener) => listener(state));
-  }
+  };
 
   const subscribe = (listener) => listeners.push(listener);
 
@@ -18,4 +18,4 @@ export const createStore = (rootReducer) => {
     dispatch,
     subscribe,
   };
-}
+};

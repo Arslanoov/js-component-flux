@@ -2,13 +2,13 @@
   "name": "js-component-flux",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
+  "main": "./build/index.js",
+  "types": "./build/types/index.d.ts",
   "scripts": {
+    "build": "npx webpack --config webpack.config.js && tsc -d --project tsconfig.json",
     "serve": "npx webpack serve",
-    "build": "webpack"
+    "lint:js": "npx eslint . --ext .ts,.tsx",
+    "lint:js:fix": "npx eslint . --ext .ts,.tsx --fix"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,15 @@
   },
   "homepage": "https://github.com/Arslanoov/js-component-flux#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.5",

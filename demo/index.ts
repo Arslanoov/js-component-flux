@@ -6,9 +6,16 @@ import { counterReducer, countSelector } from './counterReducer';
 
 import { App, mapStateToProps, mapDispatchToProps } from './app';
 
-const store = createStore(combineReducers({
-  counter: counterReducer,
-}));
+const store = createStore(
+  combineReducers({
+    counter: counterReducer,
+  })
+);
 
-const { onCountChange } = connect(App, store, mapStateToProps, mapDispatchToProps);
+const { onCountChange } = connect(
+  App,
+  store,
+  mapStateToProps,
+  mapDispatchToProps
+);
 store.subscribe((state) => onCountChange(countSelector(state)));
