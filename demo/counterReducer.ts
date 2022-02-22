@@ -20,12 +20,12 @@ export function counterReducer(state = initialState, action) {
     case ACTION_INCREASE:
       return {
         ...state,
-        count: state.count + 1
+        count: state.count + 1,
       };
     case ACTION_DECREASE:
       return {
         ...state,
-        count: state.count - 1
+        count: state.count - 1,
       };
     default:
       return state;
