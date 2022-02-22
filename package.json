@@ -2,13 +2,14 @@
   "name": "js-component-flux",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/index.js",
+  "types": "./build/types/index.d.ts",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "serve": "npx webpack serve",
-    "build": "webpack"
+    "build": "npx webpack --config webpack.config.js && tsc -d --project tsconfig.json",
+    "serve": "npx webpack serve"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
   },
   "homepage": "https://github.com/Arslanoov/js-component-flux#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "babel-loader": "^8.2.3",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.5",

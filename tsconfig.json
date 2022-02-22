@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es6",
     "module": "es6",
-    "outDir": "./dist/",
-    "esModuleInterop": true,
+    "outDir": "build/types",
+    "declarationDir": "build/types",
     "forceConsistentCasingInFileNames": true,
     "strict": false,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": true,
+    "emitDeclarationOnly": true,
+    "lib": ["es2020", "dom"],
+    "moduleResolution": "node"
+  },
+  "include": ["src"]
 }
