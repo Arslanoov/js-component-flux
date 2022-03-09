@@ -10,7 +10,7 @@ Install:
 
 ## Demo
 
-    git clone https://github.com/Arslanoov/virtual-keyboard.git
+    git clone https://github.com/Arslanoov/js-component-flux
 
     npm i
 
